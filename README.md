@@ -317,14 +317,14 @@ This test starts a mock server on a random port that acts as our provider servic
 To run only the Pact tests:
 
 ```console
-> ./gradlew consumer:test --tests *PactTest
+> ./gradlew consumer:test --tests '*PactTest'
 
 ```
 
 Running this test still passes, but it creates a pact file which we can use to validate our assumptions on the provider side, and have conversation around.
 
 ```console
-❯ ./gradlew consumer:test --tests *PactTest
+❯ ./gradlew consumer:test --tests '*PactTest'
   
   BUILD SUCCESSFUL in 6s
 ```
@@ -457,7 +457,7 @@ RequestResponsePact getOneProduct(PactDslWithProvider builder) {
 Let's run and generate an updated pact file on the client:
 
 ```console
-❯ ./gradlew consumer:test --tests *PactTest
+❯ ./gradlew consumer:test --tests '*PactTest'
   
   BUILD SUCCESSFUL in 7s
 ```
@@ -552,7 +552,7 @@ In `consumer/src/test/java/au/com/dius/pactworkshop/consumer/ProductConsumerPact
 Notice that our new tests look almost identical to our previous tests, and only differ on the expectations of the _response_ - the HTTP request expectations are exactly the same.
 
 ```console
-❯ ./gradlew consumer:test --tests *PactTest
+❯ ./gradlew consumer:test --tests '*PactTest'
   
   BUILD SUCCESSFUL in 1s
 ```
@@ -872,7 +872,7 @@ public class ProductConsumerPactTest {
 Generate a new Pact file:
 
 ```console
-❯ ./gradlew consumer:test --tests *PactTest
+❯ ./gradlew consumer:test --tests '*PactTest'
 
 BUILD SUCCESSFUL in 9s
 ```
@@ -1093,7 +1093,7 @@ pact {
 Now run
 
 ```console
-❯ ./gradlew consumer:test --tests *PactTest* pactPublish
+❯ ./gradlew consumer:test --tests '*PactTest*' pactPublish
   
   > Task :consumer:pactPublish
   Publishing 'FrontendApplication-ProductService.json' with tags step11, test, prod ... OK
